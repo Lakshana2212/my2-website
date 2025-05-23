@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personal Portfolio</title>
+  <style>
+    /* Reset & basics */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+    }
+    a {
+      text-decoration: none;
+      color: #3498db;
+      cursor: pointer;
+    }
+    a:hover {
+      color: #2c80b4;
+    }
+    header {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li {
+      font-weight: 600;
+    }
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    }
+    section h2 {
+      margin-bottom: 15px;
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 5px;
+    }
+    .about p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .skills ul,
+    .projects ul,
+    .experience ul,
+    .education ul {
+      list-style: disc inside;
+      margin-bottom: 20px;
+    }
+    .projects li,
+    .experience li,
+    .education li {
+      margin-bottom: 12px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      color: #777;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+    /* Contact form */
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      gap: 12px;
+    }
+    form input, form textarea {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    form button {
+      padding: 12px;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #2c80b4;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      section {
+        margin: 20px 10px;
+      }
+      form {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">John Doe</div>
+      <ul>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm John Doe, a passionate web developer with expertise in creating modern and responsive websites. I enjoy turning ideas into reality using clean and efficient code.</p>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>JavaScript (ES6+), React.js, Node.js</li>
+      <li>HTML5, CSS3, SASS</li>
+      <li>Responsive Design & Cross-Browser Compatibility</li>
+      <li>Git, GitHub, Agile Methodologies</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Portfolio Website:</strong> A personal website showcasing my skills and projects.</li>
+      <li><strong>Todo App:</strong> A React-based task manager with CRUD functionalities.</li>
+      <li><strong>E-commerce Site:</strong> A full-stack project with shopping cart and payment integration.</li>
+    </ul>
+  </section>
+
+  <section id="experience" class="experience">
+    <h2>Work Experience</h2>
+    <ul>
+      <li><strong>Frontend Developer</strong> - XYZ Corp (2022 - Present)</li>
+      <li><strong>Intern Developer</strong> - ABC Solutions (2021 - 2022)</li>
+    </ul>
+  </section>
+
+  <section id="education" class="education">
+    <h2>Education</h2>
+    <ul>
+      <li>B.Sc. in Computer Science, University of Somewhere (2018 - 2022)</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 John Doe. All rights reserved.
+  </footer>
+
+  <script>
+    // Smooth scrolling for nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          window.scrollTo({
+            top: targetSection.offsetTop - 70,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Simple form submission handler
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Thank you for reaching out! I will get back to you soon.');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
